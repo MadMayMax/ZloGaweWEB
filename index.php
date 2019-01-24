@@ -97,6 +97,7 @@
 				}
 				$connection = null;
 			}else{header("Location: index.php");}
+			
 		}
 		
 	}
