@@ -108,6 +108,7 @@ body
 }
 .info
 {
+	cursor:pointer;
 	font-size:25px;
 	color:white;
 	font-family:Verdana, "Trebuchet MS", Geneva, sans-serif;
