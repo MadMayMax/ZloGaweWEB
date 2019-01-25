@@ -103,190 +103,134 @@
 	}
 ?>
 <style>
-body
+*{margin:0;}
+li{list-style:none;}
+a{text-decoration: none;}
+#or{color:silver; margin-left:0px;}	
+.fa-header
 {
-	
+	height:200px;
+	width:auto;
+	background: linear-gradient(#000000, #FFFFFF);
 }
-.info
+.fa-fa-header-user
+{
+	text-align:right;
+	position:absolute;
+	top:0px;
+	right:0px;
+	height:30px;
+	width:100%;
+	background: black;
+	box-shadow:0 0 100px rgba(0,0,0,0.3);
+}
+.fa-fa-header-user-login
+{
+	position:absolute;
+	top:5px;
+	right:5px;
+}
+#fa-fa-header-name-site
+{
+	position:absolute;
+	top:21px;
+	left:20px;
+	color:white;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:50px;
+}
+
+
+
+
+#fa-fa-header-user-login-href
+{
+	cursor:pointer;
+	height:25px;
+	width:60px;
+	color: white;
+	text-decoration: none;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:15px;
+	border:0px;
+	background: none;
+}
+#fa-fa-header-user-login-input-logout
+{
+	cursor:pointer;
+	height:25px;
+	width:60px;
+	color: white;
+	text-decoration: none;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:15px;
+	border:0px;
+	background: none;
+}
+
+
+
+
+
+
+#fa-fa-header-user-login-hello_text
+{
+	color:white;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:17px;
+}
+
+
+
+
+
+
+.fa-fa-header-enum
+{
+	position:absolute;
+	top:100px;
+	right:30%;
+}
+#fa-fa-header-enum-user
 {
 	cursor:pointer;
 	font-size:25px;
+	font-weight:bold;
 	color:white;
-	font-family:Verdana, "Trebuchet MS", Geneva, sans-serif;
+	transition:0.5s;
 }
-*{margin:0;}
-#title
+#fa-fa-header-enum-user:hover
 {
-	cursor:pointer;
-	font-size:50px;
+	margin-left:10px;
+	font-size:25px;
+	font-weight:bold;
 	color:white;
-	font-family:Verdana, "Trebuchet MS", Geneva, sans-serif;
+	box-shadow:0 0 100px rgba(0,0,0,0.3);
+	transition:0.5s;
 }
-hr
-{
-	margin-top:50px;
-	border:0;
-	border-top: 5px solid black;
-}
-b
-{
-	font-family:Verdana, "Trebuchet MS", Geneva, sans-serif;
-}
-
-
-
-#image
-{
-	height:300px;
-	border:0;
-	background:url(pre_logo.png) no-repeat center;
-	box-shadow: 0 0 20px rgba(0,0,0,0.5);
-	transition:0.2s;
-}
-#image:hover
-{
-	box-shadow: 0 0 100px rgba(0,0,0,0.5);
-	transition:0.2s;
-}
-
-
-
-
-
-input[type="submit"]
+#fa-fa-header-enum-game
 {
 	cursor:pointer;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	background: #ffffff !important;
-	outline: none;
-	height: 24px;
-	width: 120px;
-	color: #cccccc;
-	font-size: 15px;
-	font-family: Tahoma;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	font-size:25px;
+	font-weight:bold;
+	color:white;
+	transition:0.5s;
 }
-input[type="button"]
+#fa-fa-header-enum-game:hover
 {
-	cursor:pointer;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	background: #ffffff !important;
-	outline: none;
-	height: 24px;
-	width: 120px;
-	color: #cccccc;
-	font-size: 15px;
-	font-family: Tahoma;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-input[type="text"]
-{
-   border: 1px solid #cccccc;
-   border-radius: 3px;
-   -webkit-border-radius: 3px; 
-   -moz-border-radius: 3px;
-   -khtml-border-radius: 3px;
-   background: #ffffff !important;
-   outline: none;
-   height: 24px;
-   width: 120px;
-   color: #cccccc;
-   font-size: 15px;
-   font-family: Tahoma;
-   box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-input[type="password"]
-{
-   border: 1px solid #cccccc;
-   border-radius: 3px;
-   -webkit-border-radius: 3px;
-   -moz-border-radius: 3px;
-   -khtml-border-radius: 3px;
-   background: #ffffff !important;
-   outline: none;
-   height: 24px;
-   width: 120px;
-   color: #cccccc;
-   font-size: 15px;
-   font-family: Tahoma;
-   box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-input:hover
-{
-	box-shadow: 0 0 100px rgba(0,0,0,0.5);
-	transition:0.2s;
-}
-input[type="checkbox"]
-{
-	cursor:pointer;
+	margin-left:10px;
+	font-size:25px;
+	font-weight:bold;
+	color:white;
+	box-shadow:0 0 100px rgba(0,0,0,0.3);
+	transition:0.5s;
 }
 
-	
-	#user_name
-	{
-		color:white;
-		margin-left:-100px;
-	}
-	.game_form
-	{
-		width:500px;
-		height:150px;
-		border:2;
-		box-shadow: 0 0 10px rgba(0,0,0,0.5);
-		transition:1s;
-	}
-	.game_form:hover
-	{
-		box-shadow: 0 0 100px rgba(0,0,0,0.5);
-		transition:0.2s;
-	}
-	.name
-	{
-		font-family:Verdana, "Trebuchet MS", Geneva, sans-serif;
-	}
-	.what
-	{
-		font-size:15px;
-		font-family:Verdana, "Trebuchet MS", Geneva, sans-serif;
-		margin-left:110px;
-		margin-top:-100px;
-	}
-	.img_game
-	{
-		width:150px;
-		height:120px;
-		margin-right:400px;
-		margin-top:10px;
-	}
-	.find_form
-	{
-		width:800px;
-		height:100px;
-		border:2;
-		box-shadow: 0 0 10px rgba(0,0,0,0.5);
-		transition:1s;
-	}
-	.find_form:hover
-	{
-		box-shadow: 0 0 100px rgba(0,0,0,0.5);
-		transition:0.2s;
-	}
-	#email
-	{
-		color:white;
-	}
-	#pass
-	{
-		color:white;
-	}
+
 </style>
 <!DOCTYPE html>
 <html>
@@ -294,72 +238,50 @@ input[type="checkbox"]
 <title>ZloGame</title>
 <link rel="stylesheet" href="styles_index.css">
 </head>
-<body>
+ <body>
+  <div class="fa-header">
+  <div class="fa-fa-header-name">
+   <text id="fa-fa-header-name-site">ZloGawe</text>
+  </div>
+	<div class="fa-fa-header-user">
+	 <div class="fa-fa-header-user-login">
+	  <?php if(!isset($_COOKIE["user"])){?>
+        <a href="log.php"><text  id="fa-fa-header-user-login-href">Вход</text></a>
+		<text id="or">или</text> 
+		<a href="reg.php"><text id="fa-fa-header-user-login-href">Регистрация</text></a>
+	   </form>
+	  <?php }else{?>
+	   <form action="" method="post">
+	    <text id="fa-fa-header-user-login-hello_text"><?php echo "<b>Привет, пользователь ".$_COOKIE["user"]."<b>"; ?></text>
+		<input id="fa-fa-header-user-login-input-logout" type="submit" name="logout" value="Выйти"></input>
+	   </form>
+	  <?php }?>
+	  
+	 </div>
+	 </div>
+	 <div class="fa-fa-header-enum">
+	  <ul>
+	  <li><text id="fa-fa-header-enum-user">Нас уже более <?php echo $_count_us?></text></li>
+	  <li><text id="fa-fa-header-enum-game">Загружено более <?php echo $_count_ga?> игор</text></li>
+	  </ul>
+	 </div>
+   </div>
 
-<header id="header">
-<fieldset id="image">
-<center>
-<tbody><table>
-<tr>
-	<td><b><text id="title">ZloGame</text></b><td>
-</tr>
-<tr>
-	<?php if(!isset($_COOKIE["user"])){?>
-	<form action="" method="post">
-	<td id="email_area"><b id="email">E-mail:</b><input type="text" name="email"></input></td>
-	<td id="pass_area"><b id="pass">Password:</b><input type="password" name="pass"></input></td>
-	<td><input type="submit" name="login" value="войти"></input></td>
-	<td><a href="reg.php"><input id="href_to_reg" type="button" value="регистрация"></input></a></td>
-	</form>
-	<?php }else{?>
-	<form action="" method="post">
-	<td><input type="submit" name="logout" value="выйти"></input></td>
-	<td><text id="user_name"><?php echo "<b>Привет, пользователь ".$_COOKIE["user"]."<b>"; ?></text></td>
-	</form>
-	<?php }?>
-</tr>
-</table></tbody>
 
-<br>
-<br>
 
-<tbody>
-<table>
-<tr>
-	<td><text class="info">Нас уже более <?php echo $_count_us?></text></td>
-</tr>
-<tr>
-	<td><text class="info">Загружено более <?php echo $_count_ga?> игор</text></td>
-</tr>
-</table>
-</tbody>
-</center>
-</fieldset>
-</header>
 
 <?php if(isset($_COOKIE["user"])){?>
 <br>
-<center>
+<div class="">
 <form action="" method="post">
-	<fieldset class="find_form">
-	<tbody>
-	<table>
-	<tr>
-		<td><input type="checkbox" name="1_game_gender" value="shuters">Стрелялки</input></td>
-		<td><input type="checkbox" name="2_game_gender" value="strategies">Стратегии</input></td>
-		<td><input type="checkbox" name="3_game_gender" value="sports">Спортивные</input></td>
-		<td><input type="checkbox" name="4_game_gender" value="race">Гонки</input></td>
-		<td><input type="checkbox" name="5_game_gender" value="Adventure">Бродилки</input></td>
-		<td><input type="checkbox" name="6_game_gender" value="coloring_pages">Раскраски</input></td>
-	</tr>
-	<tr>
-		<td><input type="submit" name="find" value="Найти"></td>
-	</tr>
-	</table>
-	</tbody>
-	</fieldset>
+		<input type="checkbox" name="1_game_gender" value="shuters">Стрелялки</input>
+		<input type="checkbox" name="2_game_gender" value="strategies">Стратегии</input>
+		<input type="checkbox" name="3_game_gender" value="sports">Спортивные</input>
+		<input type="checkbox" name="4_game_gender" value="race">Гонки</input>
+		<input type="checkbox" name="5_game_gender" value="Adventure">Бродилки</input>
+		<input type="checkbox" name="6_game_gender" value="coloring_pages">Раскраски</input>
+		<input type="submit" name="find" value="Найти"></td>
 </form>
-</center>
 <?php }?>
 <?php if(!isset($_COOKIE["user"])){?>
 <br>
@@ -412,7 +334,7 @@ input[type="checkbox"]
 
 		$games = $connection->query($sql);
 		foreach($games as $game){?>
-<center>
+
 <form action="game.php" method="post">
 	<fieldset class="game_form">
 	<tbody>
@@ -431,7 +353,7 @@ input[type="checkbox"]
 	</tbody>
 	</fieldset>
 </form>
-</center>
+
 <?php $connection=null;}}?>
 <?php if(!isset($_COOKIE["user"])){
 		$connection = new PDO("mysql:host=$server_name;dbname=$database_name", $user_name, $user_pass);

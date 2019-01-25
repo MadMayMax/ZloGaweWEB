@@ -100,119 +100,137 @@
 
 ?>
 <style>
-#reg_form
+*{margin:0;}
+li{list-style:none;}
+a{text-decoration: none;}
+
+.fa-header-login
 {
-	margin-top:200px;
-	width:300px;
-	height:120px;
+	margin-top:10%;
+	text-align:center;
+	width:400px;
+	height:200px;
+	background:silver;
+	border:0px;
+	box-shadow:0 0 100px rgba(0,0,0,0.3);
 }
-#reg_form:hover
-{
-	box-shadow: 0 0 100px rgba(0,0,0,0.5);
-}
-input
-{
-	cursor:pointer;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	background: #ffffff !important;
-	outline: none;
-	height: 24px;
-	width: 120px;
-	color: #cccccc;
-	font-size: 15px;
-	font-family: Tahoma;
-	transition:1s;
-}
-input[type="submit"]:hover
-{
-	box-shadow: 0 0 100px rgba(0,0,0,0.5);
-	transition:1s;
-}
-input[type="text"]
-{
-   border: 1px solid #cccccc;
-   border-radius: 3px;
-   -webkit-border-radius: 3px; 
-   -moz-border-radius: 3px;
-   -khtml-border-radius: 3px;
-   background: #ffffff !important;
-   outline: none;
-   height: 24px;
-   width: 120px;
-   color: #cccccc;
-   font-size: 15px;
-   font-family: Tahoma;
-   transition:1s;
-}
-input[type="password"]
-{
-   border: 1px solid #cccccc;
-   border-radius: 3px;
-   -webkit-border-radius: 3px;
-   -moz-border-radius: 3px;
-   -khtml-border-radius: 3px;
-   background: #ffffff !important;
-   outline: none;
-   height: 24px;
-   width: 120px;
-   color: #cccccc;
-   font-size: 15px;
-   font-family: Tahoma;
-   transition:1s;
-}
-#email
+#fa-fa-header-user-login-input-email
 {
 	margin-left:25px;
-}
-#singin
-{
-	margin-top:15px;
-}
-.name_area
-{
+	height:25px;
+	width:160px;
+	color: black;
+	text-decoration: none;
+	font-family:ms sans serif;
+	font-weight:bold;
 	font-size:15px;
-	font-family:Verdana, "Trebuchet MS", Geneva, sans-serif;
+	border:0px;
+	transition:0.5s;
 }
-#name_site
+#fa-fa-header-user-login-input-pass
 {
-	font-size:50px;
-	font-family:Verdana, "Trebuchet MS", Geneva, sans-serif;
+	margin-top:5px;
+	height:25px;
+	width:160px;
+	color: black;
+	text-decoration: none;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:15px;
+	border:0px;
+	transition:0.5s;
+}
+#fa-fa-header-user-login-input-email:hover
+{
+	border:2px;
+	border-color:white;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	transition:0.5s;
+}
+#fa-fa-header-user-login-input-pass:hover
+{
+	border:2px;
+	border-color:white;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	transition:0.5s;
+}
+#fa-fa-header-user-login-input-login
+{
+	margin-top:5px;
+	cursor:pointer;
+	height:25px;
+	width:100px;
+	color: white;
+	text-decoration: none;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:15px;
+	border:0px;
+	background: none;
+}
+#fa-fa-header-user-login-href
+{
+	margin-top:5px;
+	cursor:pointer;
+	height:25px;
+	width:60px;
+	color: white;
+	text-decoration: none;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:15px;
+	border:0px;
+	background: none;
+}
+
+
+
+
+#fa-fa-header-user-login-email
+{
+	color:white;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:16px;
+}
+#fa-fa-header-user-login-pass
+{
+	color:white;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:16px;
 }
 </style>
-<!DOCTYPE html>
-<html>
-<head><title></title>
-</head>
 <body>
-<center>
-<center>
-<b><text id="name_site">ZloGame</text></b>
-</center>
-<center>
-<fieldset id="reg_form">
-<center>
-<form id="post_form" method="post">
-	<b><text class="name_area">E-mail:</text></b><input id="email" type="text" name="email" value=""></input><br>
-	<br>
-	<b><text class="name_area">Password:</text></b><input id="pass" type="password" name="pass" value=""></input><br>
-	<input id="singin" type="submit" id="button" name="sign-in" value="Регистрация"></input>
-</form>
-</center>
-</fieldset>
-</center>
-<?php
-if(count($array_error) > 0){
-	for($i=0; $i<count($array_error); $i++){
-		echo "<strong class = \"error\">Ошибка:</strong>"."<em>".$array_error[$i]."</em>"."<br>";
-	}
-}
-?>
-</center>
-</body>
-</html>
-
-
+ <center>
+  <fieldset class="fa-header-login">
+   <div class="fa-header-form">
+    <form action="" method="post">
+    <ul>
+     <li>
+	  <text id="fa-fa-header-user-login-email">E-mail:</text><input  id="fa-fa-header-user-login-input-email" type="text" name="email" value=""></input>
+     </li>
+     <li>
+	  <text id="fa-fa-header-user-login-pass">Password:</text><input  id="fa-fa-header-user-login-input-pass" type="password" name="pass" value=""></input>
+     </li>
+     <li>
+     <input id="fa-fa-header-user-login-input-login" type="submit" name="sign-in" value="Регистрация"></input>
+     </li>
+	<ul>
+    </form>
+	<?php
+		if(count($array_error) > 0){
+			for($i=0; $i<count($array_error); $i++){
+				echo "<strong class = \"error\">Ошибка:</strong>"."<em>".$array_error[$i]."</em>"."<br>";
+			}
+		}?>
+   </div>
+  </fieldset>
+ <center>
+</doby>
