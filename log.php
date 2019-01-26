@@ -1,11 +1,27 @@
 <style>
-*{margin:0;}
+*{margin:0; border-radius:5px;}
 li{list-style:none;}
 a{text-decoration: none;}
 
+
+#fa-fa-header-name-site
+{
+	color:black;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:50px;
+}
+#fa-fa-header-name-site-form
+{
+	text-align:center;
+	background:black;
+	width:300px;
+	border-top-left-radius:50px;
+	border-top-right-radius:50px;
+}
 .fa-header-login
 {
-	margin-top:10%;
+	margin-top:150px;
 	text-align:center;
 	width:400px;
 	height:200px;
@@ -107,7 +123,15 @@ a{text-decoration: none;}
 }
 </style>
 <body>
+<title>ZloGame</title>
  <center>
+ <ul>
+	<li>
+	 <div class="fa-fa-header-name-site-form">
+		<text id="fa-fa-header-name-site">ZloGawe</text>
+	 </div>
+	</li>
+<li>
   <fieldset class="fa-header-login">
    <div class="fa-header-form">
     <form action="index.php" method="post">
@@ -124,9 +148,11 @@ a{text-decoration: none;}
 	 <li>
 	  <a href="reg.php"><text id="fa-fa-header-user-login-href">Регистрация</text></a>
 	 </li>
-	<ul>
+	</ul>
     </form>
    </div>
   </fieldset>
+  </li>
+  </ul>
  <center>
 </doby>

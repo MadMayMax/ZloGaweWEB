@@ -59,7 +59,7 @@
 		if(isset($_POST["find"]) && isset($_COOKIE["user"]))
 		{
 			$game_genders = [];
-			for($i=1; $i<=6; $i++)
+			for($i=1; $i<=12; $i++)
 			{
 				if(isset($_POST[$i."_game_gender"]))
 				{
@@ -90,7 +90,7 @@
 				{
 					if($info["email"] == $email && $info["password"] == $pass)
 					{
-						setcookie("user", $email, time()+86400);
+						setcookie("user", $info["username"], time()+86400);
 						header("Location: index.php");
 						break;
 					}else{echo "<script>alert(\"Ошибка: неверный пароль или почта\");</script>";}
@@ -103,7 +103,10 @@
 	}
 ?>
 <style>
-*{margin:0;}
+
+
+input[type="checkbox"]{cursor:pointer;}
+*{margin:0;  border-radius:5px;}
 li{list-style:none;}
 a{text-decoration: none;}
 #or{color:silver; margin-left:0px;}	
@@ -111,7 +114,6 @@ a{text-decoration: none;}
 {
 	height:200px;
 	width:auto;
-	background: linear-gradient(#000000, #FFFFFF);
 }
 .fa-fa-header-user
 {
@@ -121,7 +123,7 @@ a{text-decoration: none;}
 	right:0px;
 	height:30px;
 	width:100%;
-	background: black;
+	background-color: black;
 	box-shadow:0 0 100px rgba(0,0,0,0.3);
 }
 .fa-fa-header-user-login
@@ -132,14 +134,21 @@ a{text-decoration: none;}
 }
 #fa-fa-header-name-site
 {
+	text-align:center;
+	margin-left:40%;
 	position:absolute;
 	top:21px;
-	left:20px;
 	color:white;
 	font-family:ms sans serif;
 	font-weight:bold;
 	font-size:50px;
+	background:black;
+	width:300px;
+	border-bottom-left-radius:50px;
+	border-bottom-right-radius:50px;
 }
+
+
 
 
 
@@ -150,6 +159,19 @@ a{text-decoration: none;}
 	height:25px;
 	width:60px;
 	color: white;
+	text-decoration: none;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:15px;
+	border:0px;
+	background: none;
+}
+#fa-fa-header-user-login-href_2
+{
+	cursor:pointer;
+	height:25px;
+	width:60px;
+	color:black;
 	text-decoration: none;
 	font-family:ms sans serif;
 	font-weight:bold;
@@ -231,6 +253,103 @@ a{text-decoration: none;}
 }
 
 
+
+
+.fa-body-menu
+{
+	margin-top:10px;
+	margin-left:20%;
+}
+.fa-body-menu-form
+{
+	width:200px;
+	height:400px;
+	background-color: rgba(0, 120, 201, 0.2);
+	border-left:solid #1E90FF;
+	border-left-width:10px;
+	border-top:0;
+	border-right:0;
+	border-bottom:0;
+}
+
+.fa-body-game_form
+{
+	cursor:pointer;
+	text-align:center;
+	width:200px;
+	height:160px;
+	background-color: rgba(0, 120, 201, 0.2);
+	border-left:solid #1E90FF;
+	border-left-width:15px;
+	border-top:0;
+	border-right:0;
+	border-bottom:0;
+	transition:1s;
+}
+.fa-body-game_form:hover
+{
+	margin-left:20px;
+	width:250px;
+	transition:1s;
+}
+
+#fa-body-game_form-game-name
+{
+	cursor:pointer;
+	font-size:15px;
+	color:black;
+	font-family:ms sans serif;
+	font-weight:bold;
+}
+.fa-body-game
+{
+	position:absolute;
+	top:191px;
+	margin-left:35%;
+	width:500px;
+}
+.img_game
+{
+	width:150px;
+	height:100px;
+}
+.fa-body-menu-form-gender
+{
+	text-align:center;
+	background:rgba(0, 120, 201, 0.4);
+	border-left:solid #1E90FF;
+	border-right:0;
+	border-top:0;
+	border-bottom:0;
+	height:10px;
+	width:auto;
+}
+.fa-body-menu-form-input-find
+{
+	cursor:pointer;
+	height:25px;
+	width:60px;
+	color: black;
+	text-decoration: none;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:15px;
+	border:0px;
+	background: none;
+}
+.fa-body-game_form-input-play
+{
+	cursor:pointer;
+	height:25px;
+	width:60px;
+	color: black;
+	text-decoration: none;
+	font-family:ms sans serif;
+	font-weight:bold;
+	font-size:15px;
+	border:0px;
+	background: none;
+}
 </style>
 <!DOCTYPE html>
 <html>
@@ -238,76 +357,63 @@ a{text-decoration: none;}
 <title>ZloGame</title>
 <link rel="stylesheet" href="styles_index.css">
 </head>
- <body>
-  <div class="fa-header">
-  <div class="fa-fa-header-name">
-   <text id="fa-fa-header-name-site">ZloGawe</text>
-  </div>
-	<div class="fa-fa-header-user">
-	 <div class="fa-fa-header-user-login">
-	  <?php if(!isset($_COOKIE["user"])){?>
-        <a href="log.php"><text  id="fa-fa-header-user-login-href">Вход</text></a>
-		<text id="or">или</text> 
-		<a href="reg.php"><text id="fa-fa-header-user-login-href">Регистрация</text></a>
-	   </form>
-	  <?php }else{?>
-	   <form action="" method="post">
-	    <text id="fa-fa-header-user-login-hello_text"><?php echo "<b>Привет, пользователь ".$_COOKIE["user"]."<b>"; ?></text>
-		<input id="fa-fa-header-user-login-input-logout" type="submit" name="logout" value="Выйти"></input>
-	   </form>
-	  <?php }?>
-	  
-	 </div>
-	 </div>
-	 <div class="fa-fa-header-enum">
+<body>
+	<div class="fa-header">
+		<div class="fa-fa-header-name">
+			<text id="fa-fa-header-name-site">ZloGawe</text>
+		</div>
+		<div class="fa-fa-header-user">
+			<div class="fa-fa-header-user-login">
+				<?php if(!isset($_COOKIE["user"])){?>
+					<a href="log.php"><text  id="fa-fa-header-user-login-href">Вход</text></a>
+					<text id="or">или</text> 
+					<a href="reg.php"><text id="fa-fa-header-user-login-href">Регистрация</text></a>
+				<?php }else{?>
+					<form action="" method="post">
+						<text id="fa-fa-header-user-login-hello_text"><?php echo "<b>Привет, пользователь ".$_COOKIE["user"]."<b>"; ?></text>
+						<input id="fa-fa-header-user-login-input-logout" type="submit" name="logout" value="Выйти"></input>
+					</form>
+				<?php }?>
+			</div>
+		</div>
+	 <!--<div class="fa-fa-header-enum">
 	  <ul>
 	  <li><text id="fa-fa-header-enum-user">Нас уже более <?php echo $_count_us?></text></li>
 	  <li><text id="fa-fa-header-enum-game">Загружено более <?php echo $_count_ga?> игор</text></li>
 	  </ul>
-	 </div>
+	 </div>-->
    </div>
 
 
 
-
+<div class="fa-body">
 <?php if(isset($_COOKIE["user"])){?>
-<br>
-<div class="">
+<div class="fa-body-menu">
+<fieldset class="fa-body-menu-form">
 <form action="" method="post">
-		<input type="checkbox" name="1_game_gender" value="shuters">Стрелялки</input>
-		<input type="checkbox" name="2_game_gender" value="strategies">Стратегии</input>
-		<input type="checkbox" name="3_game_gender" value="sports">Спортивные</input>
-		<input type="checkbox" name="4_game_gender" value="race">Гонки</input>
-		<input type="checkbox" name="5_game_gender" value="Adventure">Бродилки</input>
-		<input type="checkbox" name="6_game_gender" value="coloring_pages">Раскраски</input>
-		<input type="submit" name="find" value="Найти"></td>
+ <ul>
+  <li><input class="fa-body-menu-form-input-find" type="submit" name="find" value="Найти"></li><br>
+  <li><fieldset class="fa-body-menu-form-gender">Для мальчиков</fieldset></li>
+  <li><input type="checkbox" name="1_game_gender" value="shuters">Стрелялки</input></li>
+  <li><input type="checkbox" name="2_game_gender" value="strategies">Стратегии</input></li>
+  <li><input type="checkbox" name="3_game_gender" value="sports">Спортивные</input></li>
+  <li><input type="checkbox" name="4_game_gender" value="race">Гонки</input></li>
+  <li><input type="checkbox" name="5_game_gender" value="Adventure">Бродилки</input></li><br>
+  
+  <li><fieldset class="fa-body-menu-form-gender">Для девочек</fieldset></li>
+  <li><input type="checkbox" name="6_game_gender" value="coloring_pages">Раскраски</input></li>
+  <li><input type="checkbox" name="7_game_gender" value="shuters">Куклы</input></li>
+  <li><input type="checkbox" name="8_game_gender" value="strategies">Одевалки</input></li>
+  <li><input type="checkbox" name="9_game_gender" value="sports">Барби</input></li>
+  <li><input type="checkbox" name="10_game_gender" value="race">Готовим еду</input></li>
+  <li><input type="checkbox" name="11_game_gender" value="Adventure">Тесты</input></li>
+  <li><input type="checkbox" name="12_game_gender" value="coloring_pages">Пони</input></li>
+ </ul>
 </form>
-<?php }?>
-<?php if(!isset($_COOKIE["user"])){?>
-<br>
-<center>
-<form action="" method="post">
-	<fieldset class="find_form">
-	<tbody>
-	<table>
-	<tr>
-		<td><input type="checkbox" name="1_game_gender" value="shuters">Стрелялки</input></td>
-		<td><input type="checkbox" name="2_game_gender" value="strategies">Стратегии</input></td>
-		<td><input type="checkbox" name="3_game_gender_" value="sports">Спортивные</input></td>
-		<td><input type="checkbox" name="4_game_gender" value="race">Гонки</input></td>
-		<td><input type="checkbox" name="5_game_gender" value="Adventure">Бродилки</input></td>
-		<td><input type="checkbox" name="6_game_gender" value="coloring_pages">Раскраски</input></td>
-	</tr>
-	<tr>
-		<td>Ввоийдите, чтобы искать</td>
-	</tr>
-	</table>
-	</tbody>
-	</fieldset>
-</form>
-</center>
-<?php }?>
-<?php if(isset($_COOKIE["user"])){
+</fieldset>
+</div>
+<div class="fa-body-game">
+		<?php
 		$connection = new PDO("mysql:host=$server_name;dbname=$database_name", $user_name, $user_pass);
 		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$select = "SELECT *";
@@ -334,50 +440,63 @@ a{text-decoration: none;}
 
 		$games = $connection->query($sql);
 		foreach($games as $game){?>
-
+<br>
 <form action="game.php" method="post">
-	<fieldset class="game_form">
-	<tbody>
-	<table>
-	<tr>
-		<td><b><text class="name"><?php echo $game["name"];?></text></b></td>
-		<td><input type="hidden" value="<?php echo $game["game"]?>" name="url_game"></input></td>
-		<td><input type="hidden" value="<?php echo $game["name"]?>" name="name_game"></input></td>
-		<td><input type="hidden" value="<?php echo $game["type"]?>" name="type_game"></input></td>
-	</tr>
-	<tr>
-		<td><img src="images_game\<?php echo $game['image'];?>" class="img_game"></img></td>
-		<td><input class="play" type="submit" name="play" value="Играть"></input></td>
-	</tr>
-	</table>
-	</tbody>
+	<fieldset class="fa-body-game_form">
+		<ul>
+			<li><text id="fa-body-game_form-game-name"><?php echo $game["name"];?></text></li>
+			<li><input type="hidden" value="<?php echo $game["game"]?>" name="url_game"></input></li>
+			<li><input type="hidden" value="<?php echo $game["name"]?>" name="name_game"></input></li>
+			<li><input type="hidden" value="<?php echo $game["type"]?>" name="type_game"></input></li>
+			<li><img src="images_game\<?php echo $game['image'];?>" class="img_game"></img></li>
+			<li><input class="fa-body-game_form-input-play" type="submit" name="play" value="Играть"></input></li>
+		</ul>
 	</fieldset>
 </form>
-
-<?php $connection=null;}}?>
-<?php if(!isset($_COOKIE["user"])){
+<?php $connection=null;}?></div><?php }?>
+<?php if(!isset($_COOKIE["user"])){?>
+<div class="fa-body-menu">
+<fieldset class="fa-body-menu-form">
+<form action="" method="post">
+ <ul>
+  <li><a href="log.php"><text id="fa-fa-header-user-login-href_2">Ввойти</text></a></li><br>
+  <li><fieldset class="fa-body-menu-form-gender">Для мальчиков</fieldset></li>
+  <li><input type="checkbox" name="1_game_gender" value="shuters">Стрелялки</input></li>
+  <li><input type="checkbox" name="2_game_gender" value="strategies">Стратегии</input></li>
+  <li><input type="checkbox" name="3_game_gender" value="sports">Спортивные</input></li>
+  <li><input type="checkbox" name="4_game_gender" value="race">Гонки</input></li>
+  <li><input type="checkbox" name="5_game_gender" value="Adventure">Бродилки</input></li><br>
+  
+  <li><fieldset class="fa-body-menu-form-gender">Для девочек</fieldset></li>
+  <li><input type="checkbox" name="6_game_gender" value="coloring_pages">Раскраски</input></li>
+  <li><input type="checkbox" name="7_game_gender" value="shuters">Куклы</input></li>
+  <li><input type="checkbox" name="8_game_gender" value="strategies">Одевалки</input></li>
+  <li><input type="checkbox" name="9_game_gender" value="sports">Барби</input></li>
+  <li><input type="checkbox" name="10_game_gender" value="race">Готовим еду</input></li>
+  <li><input type="checkbox" name="11_game_gender" value="Adventure">Тесты</input></li>
+  <li><input type="checkbox" name="12_game_gender" value="coloring_pages">Пони</input></li>
+ </ul>
+</form>
+</fieldset>
+</div>
+<div class="fa-body-game">
+		<?php
 		$connection = new PDO("mysql:host=$server_name;dbname=$database_name", $user_name, $user_pass);
 		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$sql = "SELECT * FROM $server_tb_name_2";
 		$games = $connection->query($sql);
 		foreach($games as $game){?>
-<center>
-	<fieldset class="game_form">
-	<tbody>
-	<table>
-	<tr>
-		<td><b><text class="name"><?php echo $game["name"];?></text></b></td>
-	</tr>
-	<tr>
-		<td><img src="images_game\<?php echo $game['image'];?>" class="img_game"></img></td>
-		<td>Ввойдите, чтобы играть</td>
-	</tr>
-	</table>
-	</tbody>
-	</fieldset>
-</center>
-<?php $connection=null;}}?>
+<br>		
+<fieldset class="fa-body-game_form">
+	<ul>
+		<li><text id="fa-body-game_form-game-name"><?php echo $game["name"];?></text>
+		<li><img src="images_game\<?php echo $game['image'];?>" class="img_game"></img></li>
+		<li>Ввойдите, чтобы играть</li>
+	</ul>
+</fieldset>
 
+<?php $connection=null;}?></div><?php }?>
+</div>
 
 </body>
 </html>

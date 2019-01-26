@@ -53,11 +53,11 @@ hr
 <!DOCTYPE html>
 <html>
 <head>
- <title><?php echo $name;?></title>
+ <title>ZloGawe(<?php echo $name;?>)</title>
 </head>
 <body>
 <center>
- <b><text id="title">ZloGame</text></b>
+ <b><text id="title">ZloGawe</text></b>
 </center>
 	<center>
 	<center><b><text id="name"><?php echo $name;?></text></b></center>
